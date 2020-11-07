@@ -1,0 +1,35 @@
+{% extends 'poll/base.html' %}
+
+{% block title %}Vote{% endblock %}
+
+{% block content %}
+    <h4>{{ poll.question }}</h4>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="poll" value="answer1">
+                    {{ poll.answer1 }}
+                </label> &nbsp;
+                <label>
+                    <input type="radio" name="poll" value="answer2">
+                    {{ poll.answer2 }}
+                </label> &nbsp;
+                <label>
+                    <input type="radio" name="poll" value="answer3">
+                    {{ poll.answer3 }}
+                </label> &nbsp;
+                <label>
+                    <input type="radio" name="poll" value="answer4">
+                    {{ poll.answer4 }}
+                </label> &nbsp;
+                <label>
+                    <input type="radio" name="poll" value="answer5">
+                    {{ poll.answer5 }}
+                </label> &nbsp;
+            </div>
+        </div>
+        <button type="submit">Vote!</button>
+    </form>
+{% endblock %}
